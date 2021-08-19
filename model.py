@@ -30,6 +30,10 @@ LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
           verbose=0, warm_start=False)
 
 import joblib
-joblib.dump(lr, 'model.pkl')
+
+model_columns = list(x.columns)
+joblib.dump(model_columns, 'model_columns.pkl')
+
+#joblib.dump(lr, 'model.pkl')
 
 lr = joblib.load('model.pkl')
